@@ -30,9 +30,9 @@ public class Task3 {
         int b = number1.nextInt();
 
         if (a >= b) {
-            System.out.println("Incorrectрвапр");
+            System.out.println("Incorrect");
         } else {
-            while (a < (b-1)) {
+            while (a < b) {
                 a++;
                 if (a % 5 == 0 && a % 10 != 0) {
                     System.out.print(a + " ");

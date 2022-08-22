@@ -13,8 +13,6 @@ y и условие, при котором то или иное выражени
 от значения x. Например, если x = 100, будет использовано самое первое выражение. С помощью него,
 используя значение x будет вычислено значение y.
 y = (100^2 - 10) / (100 + 7) = 93.3644859813
-
-
 */
 package day2;
 
@@ -23,18 +21,15 @@ import java.util.Scanner;
 public class Task4 {
     public static void main(String[] args) {
         Scanner number1 = new Scanner(System.in);
-        //System.out.println("Enter any number");
         double x = number1.nextDouble();
-
+        double y;
         if (x >= 5) {
-            double y = ((Math.pow(x, 2)) - 10) / (x + 7);
-            System.out.println(y);
+            y = ((Math.pow(x, 2)) - 10) / (x + 7);
         } else if (x > -3 && x < 5) {
-            double y = (x + 3) * ((Math.pow(x, 2)) - 2);
-            System.out.println(y);
+            y = (x + 3) * ((Math.pow(x, 2)) - 2);
         } else {
-            double y = 420;
-            System.out.println(y);
+            y = 420;
         }
+        System.out.println(y);
     }
 }
