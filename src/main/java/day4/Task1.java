@@ -32,52 +32,72 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner arrayOne = new Scanner(System.in);
         int n = arrayOne.nextInt();
-        double[] numbersArray = new double[n];
+        int[] numbersArray = new int[n];
 
         for (int i = 0; i < n; i++) {
-            numbersArray[i] = Math.round(Math.random() * 10);
+            numbersArray[i] = (int) Math.round(Math.random() * 10);
         }
-        for (double x : numbersArray) {
+        for (int x : numbersArray) {
             System.out.print(x + " | ");
         }
         System.out.println();
+
+        // а) Длине массива
+
         System.out.println("Array length: " + numbersArray.length);
 
-        int y = 0;
-        for (double m : numbersArray) {
-            if (m - 8 > 0) {
-                y++;
+        // б) Количестве чисел больше 8
+
+        int greater8 = 0;
+        for (int i : numbersArray) {
+            if (i > 8) {
+                greater8++;
             }
         }
-        System.out.println("Quantity of numbers more than 8: " + y);
+        System.out.println("Quantity of numbers greater than 8: " + greater8);
 
-        int q = 0;
-        for (double m : numbersArray) {
-            if (m == 1) {
-                q++;
+        // в) Количестве чисел равных 1
+
+        int equal1 = 0;
+        for (int i : numbersArray) {
+            if (i == 1) {
+                equal1++;
             }
         }
-        System.out.println("Quantity of numbers equal to 1: " + q);
+        System.out.println("Quantity of numbers equal to 1: " + equal1);
 
-        int e = 0;
-        for (int w = 0; w < n; w++) {
-            if (numbersArray[w] % 2 == 0) {
-                e++;
+        // г) Количестве четных чисел
+
+        int even = 0;
+        // ======== FOR CYCLE
+//        //  for (int w = 0; w < n; w++) {
+//            if (numbersArray[w] % 2 == 0) {
+//                even++;
+//            }
+//        }
+        // ======== FOR-EACH CYCLE
+        for (int i : numbersArray) {
+            if (i % 2 == 0) {
+                even++;
             }
         }
-        System.out.println("Quantity of even numbers: " + e);
+        System.out.println("Quantity of even numbers: " + even);
 
-        int r = 0;
-        for (int t = 0; t < n; t++) {
-            if (numbersArray[t] % 2 != 0) {
-                r++;
+        // д) Количестве нечетных чисел
+
+        int odd = 0;
+        for (int i: numbersArray) {
+            if (i % 2 != 0) {
+                odd++;
             }
         }
-        System.out.println("Quantity of odd numbers: " + r);
+        System.out.println("Quantity of odd numbers: " + odd);
 
-        double sum = 0;
-        for (int i = 0; i < numbersArray.length; i++) {
-            sum = numbersArray[i] + sum;
+        // е) Сумме всех элементов массива
+
+        int sum = 0;
+        for (int i : numbersArray) {
+            sum += i;
         }
         System.out.println("Sum of array numbers: " + sum);
     }
