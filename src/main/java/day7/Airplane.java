@@ -18,7 +18,7 @@ fuel (количество топлива в баке)
 Изменить год выпуска и длину с помощью сеттеров, вызвать метод fillUp(int n) два раза, передав разные значения.
 Вызвать метод info().  */
 
-package day6;
+package day7;
 
 public class Airplane {
     private String manufacturer;
@@ -26,7 +26,6 @@ public class Airplane {
     private int length;
     private int weight;
     private int fuel;
-
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
@@ -52,6 +51,14 @@ public class Airplane {
         return fuel;
     }
 
+    public int getLength() {
+        return length;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
     public Airplane(String manufacturer, int year, int length, int weight) {
         this.manufacturer = manufacturer;
         this.year = year;
@@ -60,12 +67,23 @@ public class Airplane {
         this.fuel = 0;
     }
 
-    // Я понимаю, что надо писать на русском, но мне пока не удалось решить проблемы с кодировкой
     public void info() {
         System.out.println("Manufacturer: " + manufacturer + "; year: " + year + "; length: " + length + "; weight: " + weight + "; fuel: " + fuel);
     }
 
-    public void fillUp(int n){
+    public void fillUp(int n) {
         fuel += n;
+    }
+
+    public static void compareAirplanes (Airplane plane1, Airplane plane2) {
+        int differenceL = plane1.getLength() - plane2.getLength();
+        if (differenceL > 0) {
+            System.out.println("The " + plane1.getManufacturer() + " plane is longer than the " + plane2.getManufacturer() + " plane");
+        } else if (differenceL < 0) {
+            System.out.println("The " + plane2.getManufacturer() + " plane is longer than the " + plane1.getManufacturer() + " plane");
+        } else {
+            System.out.println("The " + plane2.getManufacturer() + " plane and the " + plane1.getManufacturer() + " plane are equally long");
+        }
+
     }
 }

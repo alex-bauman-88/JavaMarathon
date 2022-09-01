@@ -10,24 +10,23 @@ public class Teacher {
         this.subject = subject;
     }
 
-    String evaluation;
-    public void evaluate (Student st){
-        int mark = (int) ((Math.random()*4)+2);
-        switch(mark){
-            case 5 :
+    public void evaluate(Student st) {
+        String evaluation = null;
+        int mark = (int) ((Math.random() * 4) + 2);
+        switch (mark) {
+            case 5:
                 evaluation = "excellent";
                 break;
-            case 4 :
+            case 4:
                 evaluation = "good";
                 break;
-            case 3 :
+            case 3:
                 evaluation = "satisfactory";
                 break;
-            case 2 :
+            default:
                 evaluation = "unsatisfactory";
                 break;
         }
-        // сорри за корявый английский, проблемы с кодировкой
         System.out.println(subject + " teacher " + teacherName + " graded student " + st.getStudentName() + "'s work as " + evaluation);
     }
 }

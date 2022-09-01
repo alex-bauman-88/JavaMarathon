@@ -19,6 +19,8 @@ public class Task3 {
     public static void main(String[] args) {
         Student student1 = new Student("John");
         Teacher teacher1 = new Teacher("Mr Smith", "Math");
+        Teacher teacher2 = new Teacher("Bob", "English");
         teacher1.evaluate(student1);
+        teacher2.evaluate(student1);
     }
 }
