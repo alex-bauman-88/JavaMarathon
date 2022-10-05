@@ -6,23 +6,19 @@
 После этого, надо сделать то же самое, что и требовалось в 4 задании - слить две группы и проверить состав групп после слияния.
 Методы для слияния и для вывода участников в консоль необходимо тоже переработать, чтобы они работали с объектами класса MusicArtist.
 */
-
 package day12.task5;
 
-import java.util.Arrays;
+public class MusicArtist {
+    private String name;
+    private int age;
 
-public class Task5 {
-    public static void main(String[] args) {
-        MusicBand band1 = new MusicBand("Band1", 1978,
-                Arrays.asList(new MusicArtist("Jack Doe", 29), new MusicArtist("Joe Black", 57), new MusicArtist("Bob Singer", 98)));
-        MusicBand band2 = new MusicBand("Band2", 2034,
-                Arrays.asList(new MusicArtist("Marty McFly", 15), new MusicArtist("Harry Nelsen", 23), new MusicArtist("George Bound", 20)));
+    public MusicArtist(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
-        band1.printMembers(); // [Jack Doe - 29, Joe Black - 57, Bob Singer - 98]
-        band2.printMembers(); // [Marty McFly - 15, Harry Nelsen - 23, George Bound - 20]
-
-        band1.transferMembers(band1, band2);
-        band1.printMembers(); // null
-        band2.printMembers(); // [Marty McFly - 15, Harry Nelsen - 23, George Bound - 20, Jack Doe - 29, Joe Black - 57, Bob Singer - 98]
+    @Override
+    public String toString() {
+        return name + " - " + age;
     }
 }
