@@ -22,7 +22,7 @@ public class Task4 {
         band1.printMembers(); // [Jack Doe, Joe Black, Bob Singer]
         band2.printMembers(); // [Marty McFly, Harry Nelsen, George Bound]
 
-        band1.transferMembers(band1, band2);
+        MusicBand.transferMembers(band1, band2);
         band1.printMembers(); // null
         band2.printMembers(); // [Marty McFly, Harry Nelsen, George Bound, Jack Doe, Joe Black, Bob Singer]
 

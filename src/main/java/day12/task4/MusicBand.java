@@ -41,13 +41,18 @@ public class MusicBand {
 
     public void printMembers() {
         System.out.println(getMembers());
+        // вариант:
+        // System.out.println(this.bandMembers);
     }
 
     public static void transferMembers(MusicBand band1, MusicBand band2) {
-        List<String> unitedBand1 = new ArrayList<>(band1.getMembers());
-        List<String> unitedBand2 = new ArrayList<>(band2.getMembers());
-        unitedBand2.addAll(unitedBand1);
-        band1.setBandMembers(null);
-        band2.setBandMembers(unitedBand2);
+//        List<String> unitedBand1 = new ArrayList<>(band1.getMembers());
+//        List<String> unitedBand2 = new ArrayList<>(band2.getMembers());
+//        unitedBand2.addAll(unitedBand1);
+//        band1.setBandMembers(null);
+//        band2.setBandMembers(unitedBand2);
+        for (String m : band1.getMembers())
+            band2.getMembers().add(m);
+        band1.getMembers().clear();
     }
 }

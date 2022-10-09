@@ -6,19 +6,19 @@ public class Magician extends Hero implements PhysAttack, MagicAttack {
 
     @Override
     public void magicalAttack(Hero hero) {
-        int i = (int) (hero.getHealth() - (MAGIC_ATTACK - (MAGIC_ATTACK * hero.getMagicDef())));
+        int i = (int) (hero.health - (MAGIC_ATTACK - (MAGIC_ATTACK * hero.magicDef)));
         hero.setHealth(i);
     }
 
     public Magician() {
         super();
-        setPhysDef(0);
-        setMagicDef(0.8);
-        setPhysAtt(5);
+        physDef = 0;
+        magicDef =  0.8;
+        physAtt = 5;
     }
 
     @Override
     public String toString() {
-        return "Magician{health=" + this.getHealth() + "}";
+        return "Magician{health=" + this.health + "}";
     }
 }
