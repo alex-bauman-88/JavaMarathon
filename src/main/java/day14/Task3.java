@@ -38,12 +38,12 @@ public class Task3 {
                 String[] singlePerson = scanner1.nextLine().split(" ");
                 personList.add(new Person(singlePerson[0], Integer.parseInt(singlePerson[1])));
                 if (Integer.parseInt(singlePerson[1]) < 0)
-                    throw new IOException();
+                    throw new IOException("Invalid input file");
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Invalid input file");
+            System.out.println(e.getMessage());
             personList.clear();
         } finally {
             if (scanner1 != null)

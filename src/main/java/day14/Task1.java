@@ -36,7 +36,7 @@ public class Task1 {
                 numbers.add(Integer.parseInt(scanner1.nextLine()));
             }
             if (numbers.size() != 10)
-                throw new IOException();
+                throw new IOException("Invalid input file");
 
             int sum = 0;
             for (Integer i : numbers)
@@ -47,7 +47,7 @@ public class Task1 {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Invalid input file");
+            System.out.println(e.getMessage());
         } finally {
             if (scanner1 != null) {
                 scanner1.close();

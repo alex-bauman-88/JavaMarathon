@@ -46,12 +46,12 @@ public class Task2 {
 
                 String[] ageCheck = person.split(" ");
                 if (Integer.parseInt(ageCheck[1]) < 0)
-                    throw new IOException();
+                    throw new IOException("Invalid input file");
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Invalid input file");
+            System.out.println(e.getMessage());
             listOfPeople.clear();
         }
         return listOfPeople;
