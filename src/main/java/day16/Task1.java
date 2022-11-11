@@ -28,9 +28,8 @@ public class Task1 {
     }
 
     public static void printResult(File file) {
-                Scanner scanner1 = null;
-        try {
-            scanner1 = new Scanner(file);
+
+        try (Scanner scanner1 = new Scanner(file)) {
             String[] numbersString;
 
             if (scanner1.hasNextLine())
@@ -45,15 +44,9 @@ public class Task1 {
             double arithmeticAverage = (double) sum / numbersString.length;
             System.out.printf(arithmeticAverage + " --> %.3f", arithmeticAverage);
 
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
         } catch (IOException e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (scanner1 != null)
-                scanner1.close();
         }
-
     }
 
 }
